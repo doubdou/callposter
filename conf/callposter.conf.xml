@@ -1,0 +1,19 @@
+<root>
+	<http>
+		<!--http监听地址-->
+	    <ip>0.0.0.0</ip>
+		<!-- HTTP监听端口 -->
+		<port>8018</port>
+	</http>
+	<attribution>
+		<!-- 归属地位置 -->
+		<location>苏州</location>
+		
+		<!-- 命中归属地的前缀 -->
+		<hit></hit>
+		
+		<!-- 未命中归属地的前缀 -->
+		<miss>0</miss>
+	</attribution>
+</root>
+
