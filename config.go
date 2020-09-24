@@ -8,9 +8,9 @@ import (
 
 //命令行参数全局变量,运行时绑定
 var (
-	confDir = flag.String("conf", "../conf", "配置文件路径,默认为../conf")
-	logDir  = flag.String("log", "../log", "日志文件路径,默认为../log")
-	dataDir = flag.String("data", "../data", "数据文件路径,默认为../data")
+	confDir = flag.String("conf", "../conf", "配置文件的路径")
+	logDir  = flag.String("log", "../log", "日志文件的路径")
+	dataDir = flag.String("data", "../data", "数据文件的路径")
 )
 
 //ConfigRoot 定义配置文件结构

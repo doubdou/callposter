@@ -2,6 +2,7 @@ package callposter
 
 import (
 	"encoding/xml"
+	"flag"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -83,6 +84,7 @@ func doLogFile(dir string) error {
 }
 
 func doFile() error {
+	flag.Parse()
 	//配置文件
 	err := doConfFile(*confDir)
 	if err != nil {

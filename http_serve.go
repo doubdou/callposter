@@ -53,11 +53,11 @@ func doPut(w http.ResponseWriter, r *http.Request) {
 	err = json.Unmarshal(buf, &req)
 	mng.Lock()
 	if mng.mapping[req.CallerDisplay] == false {
-		log.Println("do put callerDisplay:", req.CallerDisplay, "not used!")
+		log.Println("Put callerDisplay:", req.CallerDisplay, "not used!")
 		w.WriteHeader(400)
 	} else {
 		mng.mapping[req.CallerDisplay] = false
-		log.Println("do put callerDisplay:", req.CallerDisplay, "using flag: true -> false")
+		log.Println("Put callerDisplay:", req.CallerDisplay, "using flag: true -> false")
 	}
 	mng.Unlock()
 }
@@ -70,7 +70,7 @@ func doGet(w http.ResponseWriter, r *http.Request) {
 
 	if len(vars["callee"]) == 0 {
 		w.WriteHeader(400)
-		log.Println("get fail: callee not found in url!")
+		log.Println("Get fail: callee not found in url!")
 		return
 	}
 	callee := vars["callee"][0]
@@ -80,7 +80,7 @@ func doGet(w http.ResponseWriter, r *http.Request) {
 			//设置使用中
 			mng.mapping[k] = true
 			resp.CallerDisplay = k
-			log.Println("do Get callerDisplay:", k, "using flag: false -> true")
+			log.Println("Get callerDisplay:", k, "using flag: false -> true")
 			break
 		}
 		cnt++
